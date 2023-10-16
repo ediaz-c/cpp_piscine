@@ -6,7 +6,7 @@
 /*   By: erick <erick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 15:48:15 by erick             #+#    #+#             */
-/*   Updated: 2023/10/15 12:12:08 by erick            ###   ########.fr       */
+/*   Updated: 2023/10/16 11:45:20 by erick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,44 +45,79 @@ void	Contact::setFirstName(void)
 {
 	std::string	input;
 
-	std::cout << "Write your first name: ";
-	std::cin >> input;
+	while (true)
+	{
+		std::cout << FIRSTNAME;
+		std::getline(std::cin, input);
+		if (input != "")
+			break ;
+		else
+			std::cout << "Input empty" << std::endl;
+	}
 	this->_firstName = input;
 }
 
 void	Contact::setLastName(void)
 {
 	std::string	input;
-	
-	std::cout << "Write your last name: ";
-	std::cin >> input;
+
+	while (true)
+	{
+		std::cout << LASTNAME;
+		std::getline(std::cin, input);
+		if (input != "")
+			break ;
+		else
+			std::cout << "Input empty" << std::endl;
+	}
 	this->_lastName = input;
 }
 
 void	Contact::setNickname(void)
 {
 	std::string	input;
-	
-	std::cout << "Write your nick name: ";
-	std::cin >> input;
+
+	while (true)
+	{
+		std::cout << NICKNAME;
+		std::getline(std::cin, input);
+		if (input != "")
+			break ;
+		else
+			std::cout << "Input empty" << std::endl;
+	}
 	this->_nickname = input;
 }
 
 void	Contact::setPhoneNumber(void)
 {
 	std::string	input;
-	
-	std::cout << "Write your phone number: ";
-	std::cin >> input;
+
+	while (true)
+	{
+		std::cout << PHONE;
+		std::getline(std::cin, input);
+		if (input != "")
+			break ;
+		else
+			std::cout << "Input empty" << std::endl;
+	}
 	this->_phoneNumber = input;
 }
 
 void	Contact::setDarkestSecret(void)
 {
 	std::string	input;
-	
-	std::cout << "Write your darkest secret: ";
-	std::cin >> input;
+
+	while (true)
+	{
+		std::cout << SECRET;
+		std::getline(std::cin, input);
+		if (input != "")
+			break ;
+		else
+			std::cout << "Input empty" << std::endl;
+	}
 	this->_darkestSecret = input;
 }
 

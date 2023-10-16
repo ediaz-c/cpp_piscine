@@ -6,7 +6,7 @@
 /*   By: erick <erick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 15:19:34 by erick             #+#    #+#             */
-/*   Updated: 2023/10/15 12:01:46 by erick            ###   ########.fr       */
+/*   Updated: 2023/10/16 15:54:03 by erick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,22 @@ int	main(void)
 	PhoneBook	phonebook;
 	std::string	cmd;
 	
-	std::cout << "WELLCOME" << std::endl;
+	std::cout << WELCOME << std::endl;
 	while (true)
 	{
-		std::cout << "Escribe un comando [ADD], [SEARCH], [EXIT]" << std::endl;
+		std::cout << COMMANDS;
 		std::getline(std::cin, cmd);
 		for(int i = 0; i < (int)cmd.length(); i++)
 			cmd[i] = std::toupper(cmd[i]);
 		if (cmd == "ADD")
 			phonebook.addContact();
 		else if (cmd == "SEARCH")
-			std::cout << "SEARCH" << std::endl;
+			phonebook.searchContact();
 		else if (cmd == "EXIT")
 			break;
 		else
-			std::cout << "Comando invalido" << std::endl;
+			std::cout << BRed"Comando invalido " Color_off << cmd << std::endl;
+		std::cout << std::endl;
 	}
+	return (0);
 }

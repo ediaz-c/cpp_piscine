@@ -6,7 +6,7 @@
 /*   By: erick <erick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 15:06:13 by erick             #+#    #+#             */
-/*   Updated: 2023/10/14 20:18:49 by erick            ###   ########.fr       */
+/*   Updated: 2023/10/16 15:17:33 by erick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ class PhoneBook
 		Contact		_contacts[8];
 		int			_lastIndex;
 		int			_getIndex(void);
+		void		_printTable(void);
+		void		_contactTable(int i);
+		void		_printContact(int i);
+		std::string	_cellTable(std::string str);
 		
 };
 
