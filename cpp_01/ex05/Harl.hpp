@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erick <erick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 17:14:22 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/11/07 19:15:42 by erick            ###   ########.fr       */
+/*   Created: 2023/10/25 18:06:43 by erick             #+#    #+#             */
+/*   Updated: 2023/10/25 18:08:30 by erick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef HARL_HPP
+# define HARL_HPP
+
 #include <iostream>
-class Fixed
+
+class Harl
 {
 private:
-	int					_valueFixed;
-	static const int	_bitsFract;
+	void	debug(void);
+	void	info(void);
+	void	warning(void);
+	void	error(void);
 public:
-	Fixed();
-	~Fixed();
-
-	Fixed(Fixed const &cpy);
-	Fixed & operator=(Fixed const & equal);
-	int getRawBits(void) const;
-	void setRawBits (int const value);
+	Harl();
+	~Harl();
+	void	complain(std::string level);
 };
 
 #endif

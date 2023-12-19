@@ -1,20 +1,19 @@
-NAME		=	megaphone
-CC			=	clang++
-CFLAGS		=	-Wall -Werror -Wextra -std=c++98
+NAME			=	megaphone
+CXX				=	clang++
+CXXFLAGS		=	-Wall -Werror -Wextra -std=c++98
 
-RM			=	rm -rf
-
-SRC			=	megaphone.cpp
-
-OBJS		=	megaphone.o
+RM				=	rm -rf
+SRC				=	megaphone.cpp
+OBJS			=	$(SRC:.cpp=.o)
 
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+	@echo "Ejecutable "$(NAME)" creado"
 
 $(OBJS):	$(SRC)
-	@$(CC) $(CFLAGS) -c $(SRC) -o $(OBJS)
+	@$(CXX) $(CXXFLAGS) -c $(SRC) -o $(OBJS)
 	@echo "Compilado "$<
 
 clean:

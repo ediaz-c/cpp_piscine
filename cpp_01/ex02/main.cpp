@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erick <erick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 17:14:22 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/11/07 19:15:42 by erick            ###   ########.fr       */
+/*   Created: 2023/10/18 15:33:12 by erick             #+#    #+#             */
+/*   Updated: 2023/10/18 15:44:16 by erick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
 #include <iostream>
-class Fixed
+
+int	main(void)
 {
-private:
-	int					_valueFixed;
-	static const int	_bitsFract;
-public:
-	Fixed();
-	~Fixed();
+	std::string	str = "HI THIS IS BRAIN";
+	std::string	*str_ptr = &str;
+	std::string	&str_ref = str;
 
-	Fixed(Fixed const &cpy);
-	Fixed & operator=(Fixed const & equal);
-	int getRawBits(void) const;
-	void setRawBits (int const value);
-};
+	std::cout << &str << std::endl;
+	std::cout << str_ptr << std::endl;
+	std::cout << &str_ref << std::endl;
 
-#endif
+	std::cout << str << std::endl;
+	std::cout << *str_ptr << std::endl;
+	std::cout << str_ref << std::endl;
+}

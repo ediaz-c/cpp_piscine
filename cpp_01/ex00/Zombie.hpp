@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erick <erick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 17:14:22 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/11/07 19:15:42 by erick            ###   ########.fr       */
+/*   Created: 2023/10/18 12:07:10 by erick             #+#    #+#             */
+/*   Updated: 2023/10/18 12:13:18 by erick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
-#include <iostream>
-class Fixed
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
+# include <iostream>
+
+class Zombie
 {
 private:
-	int					_valueFixed;
-	static const int	_bitsFract;
+	std::string	_name;
 public:
-	Fixed();
-	~Fixed();
-
-	Fixed(Fixed const &cpy);
-	Fixed & operator=(Fixed const & equal);
-	int getRawBits(void) const;
-	void setRawBits (int const value);
+	Zombie(std::string name);
+	~Zombie(void);
+	void	announce(void);
 };
 
 #endif

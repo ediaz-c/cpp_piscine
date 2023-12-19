@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erick <erick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 17:14:22 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/11/07 19:15:42 by erick            ###   ########.fr       */
+/*   Created: 2023/10/28 13:36:26 by erick             #+#    #+#             */
+/*   Updated: 2023/10/28 13:50:43 by erick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
-#include <iostream>
-class Fixed
+#include "Harl.hpp"
+
+std::string	toUpper(std::string level)
 {
-private:
-	int					_valueFixed;
-	static const int	_bitsFract;
-public:
-	Fixed();
-	~Fixed();
+	for (size_t i = 0; i < level.length(); i++)
+		level[i] = std::toupper(level[i]);
+	return (level);
+}
 
-	Fixed(Fixed const &cpy);
-	Fixed & operator=(Fixed const & equal);
-	int getRawBits(void) const;
-	void setRawBits (int const value);
-};
-
-#endif
+int	main(int ac, char *av[])
+{
+	Harl	paco;
+	std::string	lvl;
+	if (ac != 2)
+	{
+		std::cout << "USE: ./harlFilter <DEBUG/INFO/WARNING/ERROR>" << std::endl;
+		return 1;
+	}
+	paco.complain(toUpper(av[1]));
+}

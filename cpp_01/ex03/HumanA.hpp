@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erick <erick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 17:14:22 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/11/07 19:15:42 by erick            ###   ########.fr       */
+/*   Created: 2023/10/25 16:47:03 by erick             #+#    #+#             */
+/*   Updated: 2023/10/25 16:51:58 by erick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
-#include <iostream>
-class Fixed
+#ifndef HUMAN_A_HPP
+# define HUMAN_A_HPP
+
+# include "Weapon.hpp"
+
+class HumanA
 {
 private:
-	int					_valueFixed;
-	static const int	_bitsFract;
+	std::string	name_;
+	Weapon		&weapon_;
 public:
-	Fixed();
-	~Fixed();
-
-	Fixed(Fixed const &cpy);
-	Fixed & operator=(Fixed const & equal);
-	int getRawBits(void) const;
-	void setRawBits (int const value);
+	HumanA(std::string name, Weapon &weapon);
+	~HumanA();
+	void	attack(void);
 };
 
 #endif

@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erick <erick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 17:14:22 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/11/07 19:15:42 by erick            ###   ########.fr       */
+/*   Created: 2023/10/25 18:19:25 by erick             #+#    #+#             */
+/*   Updated: 2023/10/25 18:23:18 by erick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
-#include <iostream>
-class Fixed
+#include "Harl.hpp"
+
+int	main(void)
 {
-private:
-	int					_valueFixed;
-	static const int	_bitsFract;
-public:
-	Fixed();
-	~Fixed();
-
-	Fixed(Fixed const &cpy);
-	Fixed & operator=(Fixed const & equal);
-	int getRawBits(void) const;
-	void setRawBits (int const value);
-};
-
-#endif
+	Harl	silly;
+	std::cout << "===== DEBUG LEVEL =====" << std::endl;
+	silly.complain("DEBUG");
+	std::cout << "===== INFO LEVEL =====" << std::endl;
+	silly.complain("INFO");
+	std::cout << "===== WARNING LEVEL =====" << std::endl;
+	silly.complain("WARNING");
+	std::cout << "===== ERROR LEVEL =====" << std::endl;
+	silly.complain("ERROR");
+}

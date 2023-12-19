@@ -1,37 +1,33 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: erick <erick@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/14 15:06:13 by erick             #+#    #+#             */
-/*   Updated: 2023/10/16 15:17:33 by erick            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
+#include <iostream>
+#include <iomanip>
+#include "Contact.hpp"
 
-# include "Contact.hpp"
+# define BLACK "\033[1;90m"
+# define RED "\033[1;91m"
+# define GREEN "\033[1;92m"
+# define YELLOW "\033[1;93m"
+# define BLUE "\033[1;94m"
+# define PURPLE "\033[1;95m"
+# define CYAN "\033[1;96m"
+# define WHITE "\033[1;97m"
+# define RESET "\033[0m"
 
 class PhoneBook
 {
+	private:
+		Contact	_contacts[2];
+		int		_numContacts;
+		int		_lastIndex;
+		int		_numContactsFilled;
+		void	_printCell(std::string str);
 	public:
-		PhoneBook();
-		~PhoneBook();
 		void	addContact(void);
 		void	searchContact(void);
-	
-	private:
-		Contact		_contacts[8];
-		int			_lastIndex;
-		int			_getIndex(void);
-		void		_printTable(void);
-		void		_contactTable(int i);
-		void		_printContact(int i);
-		std::string	_cellTable(std::string str);
-		
+		void	getContact(int index);
+		PhoneBook(void);
+		~PhoneBook(void);
 };
 
 #endif

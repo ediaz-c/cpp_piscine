@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erick <erick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 17:14:22 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/11/07 19:15:42 by erick            ###   ########.fr       */
+/*   Created: 2023/10/25 16:22:13 by erick             #+#    #+#             */
+/*   Updated: 2023/10/25 17:12:38 by erick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
-#include <iostream>
-class Fixed
+#ifndef WEAPON_H
+# define WEAPON_H
+
+# include <iostream>
+
+class Weapon
 {
 private:
-	int					_valueFixed;
-	static const int	_bitsFract;
+	std::string type_;
 public:
-	Fixed();
-	~Fixed();
-
-	Fixed(Fixed const &cpy);
-	Fixed & operator=(Fixed const & equal);
-	int getRawBits(void) const;
-	void setRawBits (int const value);
+	Weapon(std::string type);
+	~Weapon();
+	std::string const &getType(void);
+	void setType(std::string type);
 };
 
 #endif

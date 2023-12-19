@@ -1,20 +1,19 @@
-NAME		=	phonebook
-CC			=	clang++
-CFLAGS		=	-Wall -Werror -Wextra -std=c++98
+NAME		=		phonebook
+CXX			=		clang++
+CXXFLAGS	=		-Wall -Werror -Wextra -std=c++98
 
-RM			=	rm -rf
-
-SRC			=	Contact.cpp PhoneBook.cpp main.cpp
-
-OBJS		=	$(SRC:.cpp=.o)
+RM			=		rm -rf
+SRC			=		Contact.cpp PhoneBook.cpp main.cpp
+OBJS		=		$(SRC:.cpp=.o)
 
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+	@echo "Ejecutable "$(NAME)" creado"
 
 %.o: %.cpp
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 	@echo "Compilado "$<
 
 clean:
@@ -26,5 +25,3 @@ fclean:	clean
 	@echo "Ejecutable "$(NAME)" eliminado"
 
 re:	fclean all
-
-.PHONY: all clean fclean re

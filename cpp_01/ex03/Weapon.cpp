@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erick <erick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 17:14:22 by ediaz--c          #+#    #+#             */
-/*   Updated: 2023/11/07 19:15:42 by erick            ###   ########.fr       */
+/*   Created: 2023/10/25 16:40:19 by erick             #+#    #+#             */
+/*   Updated: 2023/10/25 17:13:23 by erick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
-#include <iostream>
-class Fixed
+#include "Weapon.hpp"
+
+Weapon::Weapon(std::string type)
 {
-private:
-	int					_valueFixed;
-	static const int	_bitsFract;
-public:
-	Fixed();
-	~Fixed();
+	this->setType(type);
+	std::cout << "Weapon type " << this->type_ << " created" << std::endl;
+}
 
-	Fixed(Fixed const &cpy);
-	Fixed & operator=(Fixed const & equal);
-	int getRawBits(void) const;
-	void setRawBits (int const value);
-};
+Weapon::~Weapon()
+{
+	std::cout << "Weapon type " << this->type_ << " deleted" << std::endl;
+}
 
-#endif
+void Weapon::setType(std::string type)
+{
+	this->type_ = type;
+}
+
+std::string const &Weapon::getType(void)
+{
+	return this->type_;
+}
