@@ -1,28 +1,28 @@
-NAME		=		account
-CXX			=		clang++
-CXXFLAGS	=		-Wall -Werror -Wextra -std=c++98
-RM			=		rm -rf
-SRC			=		Account.cpp tests.cpp
-OBJS		=		$(SRC:.cpp=.o)
+NAME		=	account
+CXX			=	clang++
+CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98
+RM			=	rm -rf
+SRC			=	Account.cpp tests.cpp
+OBJS		=	$(SRC:.cpp=.o)
 
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
 	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
-	@echo "Ejecutable "$(NAME)" creado"
+	@echo "Ejecutable $(NAME) creado"
 
-$(OBJS):	$(SRC)
-	@$(CXX) $(CXXFLAGS) -c $(SRC) -o $(OBJS)
-	@echo "Compilado "$<
+%.o: %.cpp
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
+	@echo "Compilado $<"
 
 clean:
 	@$(RM) $(OBJS)
-	@echo "Objeto " $(OBJS) " eliminado"
+	@echo "Objetos $(OBJS) eliminados"
 
-fclean:	clean
+fclean: clean
 	@$(RM) $(NAME)
-	@echo "Ejecutable "$(NAME)" eliminado"
+	@echo "Ejecutable $(NAME) eliminado"
 
-re:	fclean all
+re: fclean all
 
 .PHONY: all clean fclean re
