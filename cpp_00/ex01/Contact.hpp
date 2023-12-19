@@ -13,6 +13,8 @@
 # define WHITE "\033[1;97m"
 # define RESET "\033[0m"
 
+# define CONTACT_FIELDS 8
+
 class Contact
 {
 	private:

@@ -17,7 +17,7 @@
 class PhoneBook
 {
 	private:
-		Contact	_contacts[2];
+		Contact	_contacts[CONTACT_FIELDS];
 		int		_numContacts;
 		int		_lastIndex;
 		int		_numContactsFilled;

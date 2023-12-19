@@ -1,9 +1,8 @@
-NAME		=		phonebook
+NAME		=		account
 CXX			=		clang++
 CXXFLAGS	=		-Wall -Werror -Wextra -std=c++98
-
 RM			=		rm -rf
-SRC			=		Contact.cpp PhoneBook.cpp main.cpp
+SRC			=		Account.cpp tests.cpp
 OBJS		=		$(SRC:.cpp=.o)
 
 all:	$(NAME)
@@ -12,8 +11,8 @@ $(NAME):	$(OBJS)
 	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 	@echo "Ejecutable "$(NAME)" creado"
 
-%.o: %.cpp
-	@$(CXX) $(CXXFLAGS) -c $< -o $@
+$(OBJS):	$(SRC)
+	@$(CXX) $(CXXFLAGS) -c $(SRC) -o $(OBJS)
 	@echo "Compilado "$<
 
 clean:

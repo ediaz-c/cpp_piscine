@@ -2,12 +2,14 @@
 
 PhoneBook::PhoneBook(void)
 {
-	this->_numContacts = 2;
+	std::cout << GREEN "PHONEBOOK constructor" RESET << std::endl;
+	this->_numContacts = CONTACT_FIELDS;
 	this->_lastIndex = 0;
 	this->_numContactsFilled = 0;
 }
 PhoneBook::~PhoneBook(void)
 {
+	std::cout << RED "PHONEBOOK destructor" RESET << std::endl;
 }
 
 void	PhoneBook::addContact(void)
@@ -28,7 +30,7 @@ void	PhoneBook::searchContact(void)
 	for (int i = 0; i < this->_numContactsFilled; i++)
 	{
 		std::cout << "|";
-		std::cout << std::setw(10) << i + 1 << "|";
+		std::cout << std::setw(10) << std::left << i + 1 << "|";
 		this->_printCell(this->_contacts[i].getFirstName());
 		this->_printCell(this->_contacts[i].getLastName());
 		this->_printCell(this->_contacts[i].getNickname());
@@ -51,6 +53,8 @@ void	PhoneBook::searchContact(void)
 			std::cout << RED "Error input" WHITE << std::endl;
 			exit(0);
 		}
+		else if (index_str.empty())
+			break ;
 		else if (index_int < 1 || index_int > this->_numContactsFilled)
 			std::cout << RED "Invalid index" WHITE << std::endl;
 		else
