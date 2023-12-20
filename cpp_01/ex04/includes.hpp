@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   includes.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erick <erick@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ediaz--c <ediaz--c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 17:37:49 by erick             #+#    #+#             */
-/*   Updated: 2023/10/25 17:45:44 by erick            ###   ########.fr       */
+/*   Updated: 2023/12/20 15:03:42 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,8 @@
 # include "color.hpp"
 # include <iostream>
 # include <fstream>
+# define INPUT_FILE 1
+# define S1 2
+# define S2 3
 
 #endif

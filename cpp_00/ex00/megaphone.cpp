@@ -6,7 +6,7 @@
 /*   By: ediaz--c <ediaz--c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 12:33:04 by erick             #+#    #+#             */
-/*   Updated: 2023/12/18 23:16:12 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/12/20 15:55:57 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	PrintStringToUpper(char *str)
 
 void	OneArg(void)
 {
-	PrintStringToUpper((char *)"* LOUD AND UNBEARABLE FEEDBACK NOISE *");
+	std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 }
 
 int	main(int ac, char *av[])
