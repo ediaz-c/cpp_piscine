@@ -13,7 +13,8 @@ Account::Account(int initial_deposit) : _amount(initial_deposit), _nbDeposits(0)
     _accountIndex = _nbAccounts++;
     _totalAmount += initial_deposit;
     _displayTimestamp();
-    std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";created" << std::endl;
+    std::cout << "index:" << _accountIndex;
+	std::cout << ";amount:" << _amount << ";created" << std::endl;
 }
 
 Account::~Account() {
@@ -52,25 +53,33 @@ void Account::displayAccountsInfos() {
 
 void Account::makeDeposit(int deposit) {
     _displayTimestamp();
-    std::cout << "index:" << _accountIndex << ";p_amount:" << _amount << ";deposit:" << deposit;
+    std::cout << "index:" << _accountIndex;
+	std::cout << ";p_amount:" << _amount;
+	std::cout << ";deposit:" << deposit;
     _amount += deposit;
     _nbDeposits++;
     _totalNbDeposits++;
-    std::cout << ";amount:" << _amount << ";nb_deposits:" << _nbDeposits << std::endl;
+    std::cout << ";amount:" << _amount;
+	std::cout << ";nb_deposits:" << _nbDeposits << std::endl;
 }
 
 bool Account::makeWithdrawal(int withdrawal) {
     if (_amount >= withdrawal) {
         _displayTimestamp();
-        std::cout << "index:" << _accountIndex << ";p_amount:" << _amount << ";withdrawal:" << withdrawal;
+        std::cout << "index:" << _accountIndex;
+		std::cout << ";p_amount:" << _amount;
+		std::cout << ";withdrawal:" << withdrawal;
         _amount -= withdrawal;
         _nbWithdrawals++;
         _totalNbWithdrawals++;
-        std::cout << ";amount:" << _amount << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
+        std::cout << ";amount:" << _amount;
+		std::cout << ";nb_withdrawals:" << _nbWithdrawals << std::endl;
         return true;
     } else {
         _displayTimestamp();
-        std::cout << "index:" << _accountIndex << ";p_amount:" << _amount << ";withdrawal:refused" << std::endl;
+        std::cout << "index:" << _accountIndex;
+		std::cout << ";p_amount:" << _amount;
+		std::cout << ";withdrawal:refused" << std::endl;
         return false;
     }
 }

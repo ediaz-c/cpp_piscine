@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ediaz--c <ediaz--c@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 12:33:04 by erick             #+#    #+#             */
-/*   Updated: 2023/12/20 15:55:57 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/12/20 18:21:04 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,10 @@ int	main(int ac, char *av[])
 	if (ac < 2)
 		OneArg();
 	else
+	{
 		for (int i = 1; av[i]; i++)
 			PrintStringToUpper(av[i]);
-	std::cout << std::endl;
+		std::cout << std::endl;
+	}
 	return (0);
 }

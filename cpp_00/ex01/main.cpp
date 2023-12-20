@@ -26,7 +26,10 @@ int	main(void)
 		std::cout << std::endl;
 		cmdToUpper(&command);
 		if (command == "EXIT" || std::cin.eof())
+		{
+			std::cout << GREEN << "Exit" << RESET << std::endl;
 			break ;
+		}
 		else if (command == "ADD")
 			phoneBook.addContact();
 		else if (command == "SEARCH")

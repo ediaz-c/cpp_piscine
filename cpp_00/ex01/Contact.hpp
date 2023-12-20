@@ -25,6 +25,7 @@ class Contact
 		std::string	_darkestSecret;
 
 		std::string	_getInput(std::string prompt);
+		bool		_isNumber(std::string number);
 	public:
 		std::string	getFirstName(void);
 		std::string	getLastName(void);

@@ -34,6 +34,16 @@ std::string	Contact::_getInput(std::string prompt)
 	return (str);
 }
 
+bool	Contact::_isNumber(std::string number)
+{
+	for (int i = 0; number[i]; i++)
+	{
+		if (isdigit(number[i]) == false)
+			return (false);
+	}
+	return (true);
+}
+
 void	Contact::printContact(void)
 {
 	std::cout << GREEN "FIRST NAME: " RESET << this->getFirstName() << std::endl;
@@ -54,8 +64,10 @@ void	Contact::addContact(void)
 	while (true)
 	{
 		number = this->_getInput("Enter phone number");
-		if (number)
+		if (this->_isNumber(number))
 			break;
+		else
+			std::cout << RED << "Only numbers" << RESET << std::endl;
 	}
 	this->setPhoneNumber(number);
 	this->setDarkestSecret(this->_getInput("Enter darkest secret"));
