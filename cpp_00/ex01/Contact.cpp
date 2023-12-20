@@ -45,11 +45,19 @@ void	Contact::printContact(void)
 
 void	Contact::addContact(void)
 {
+	std::string number;
+
 	std::cout << GREEN "ADD CONTACT" RESET << std::endl;
 	this->setFirstName(this->_getInput("Enter first name"));
 	this->setLastName(this->_getInput("Enter last name"));
 	this->setNickname(this->_getInput("Enter nickname"));
-	this->setPhoneNumber(this->_getInput("Enter phone number"));
+	while (true)
+	{
+		number = this->_getInput("Enter phone number");
+		if (number)
+			break;
+	}
+	this->setPhoneNumber(number);
 	this->setDarkestSecret(this->_getInput("Enter darkest secret"));
 	std::cout << std::endl;
 }
