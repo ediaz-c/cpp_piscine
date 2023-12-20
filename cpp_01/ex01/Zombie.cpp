@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erick <erick@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ediaz--c <ediaz--c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:42:09 by erick             #+#    #+#             */
-/*   Updated: 2023/10/18 13:45:59 by erick            ###   ########.fr       */
+/*   Updated: 2023/12/19 17:30:16 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Zombie::Zombie(void)
 
 Zombie::~Zombie(void)
 {
-	std::cout << "\033[1;92mZombie deleted\033[0m" << std::endl;
+	std::cout << "\033[1;92mZombie " << BIBlue << _name << BIGreen << " deleted\033[0m" << std::endl;
 }
 
 void	Zombie::setName(std::string name)

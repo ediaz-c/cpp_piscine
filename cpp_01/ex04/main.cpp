@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erick <erick@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ediaz--c <ediaz--c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 17:37:29 by erick             #+#    #+#             */
-/*   Updated: 2023/10/25 18:01:04 by erick            ###   ########.fr       */
+/*   Updated: 2023/12/20 12:16:48 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,16 @@ void	replaceLine(std::string& line, std::string& s1, std::string& s2)
 	}
 }
 
+int	oneArgument(std::string av0)
+{
+	std::cerr << BRed"Use: " << av0 << " <name of file> <s1> <s2>" Color_off << std::endl;
+	return (EXIT_FAILURE);
+}
+
 int	main(int ac, char*av[])
 {
 	if (ac != 4)
-	{
-		std::cerr << BRed"Use: " << av[0] << " <name of file> <s1> <s2>" Color_off << std::endl;
-		return 1;
-	}
+		return oneArgument(av[0]);
 	std::string	file = av[1];
 	std::string	s1 = av[2];
 	std::string s2 = av[3];
