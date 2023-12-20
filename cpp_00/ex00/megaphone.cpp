@@ -6,7 +6,7 @@
 /*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 12:33:04 by erick             #+#    #+#             */
-/*   Updated: 2023/12/20 18:21:04 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/12/20 18:22:15 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	PrintStringToUpper(char *str)
 
 	while (str[i])
 	{
-		std::cout << (char)toupper(str[i]);
+		std::cout << (char)std::toupper(str[i]);
 		i++;
 	}
 }
