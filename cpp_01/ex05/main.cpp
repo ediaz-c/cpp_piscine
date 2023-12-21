@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erick <erick@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ediaz--c <ediaz--c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 18:19:25 by erick             #+#    #+#             */
-/*   Updated: 2023/10/25 18:23:18 by erick            ###   ########.fr       */
+/*   Updated: 2023/12/21 11:26:12 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	main(void)
 {
-	Harl	silly;
+	Harl	harl;
 	std::cout << "===== DEBUG LEVEL =====" << std::endl;
-	silly.complain("DEBUG");
+	harl.complain("DEBUG");
 	std::cout << "===== INFO LEVEL =====" << std::endl;
-	silly.complain("INFO");
+	harl.complain("INFO");
 	std::cout << "===== WARNING LEVEL =====" << std::endl;
-	silly.complain("WARNING");
+	harl.complain("WARNING");
 	std::cout << "===== ERROR LEVEL =====" << std::endl;
-	silly.complain("ERROR");
+	harl.complain("ERROR");
 }
