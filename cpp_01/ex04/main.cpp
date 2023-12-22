@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ediaz--c <ediaz--c@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 17:37:29 by erick             #+#    #+#             */
-/*   Updated: 2023/12/21 11:22:17 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/12/22 18:11:09 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,16 @@ int	oneArgument(std::string av0)
 {
 	std::cerr << BRed"Use: " << av0 << " <name of file> <s1> <s2>" Color_off << std::endl;
 	return (EXIT_FAILURE);
+}
+
+int	checkStringsOne(std::string s1)
+{
+	if (s1.empty())
+	{
+		std::cerr << BRed"String 1 is empty" << Color_off << std::endl;
+		return (EXIT_FAILURE);
+	}
+	return (EXIT_SUCCESS);
 }
 
 int	checkInputFile(std::ifstream &input_file, std::string inputFile)
@@ -69,6 +79,8 @@ int	main(int ac, char*av[])
 	std::string s2 = av[S2];
 
 	std::ifstream	input_file(inputFile);
+	if (checkStringsOne(s1))
+		return (EXIT_FAILURE);
 	if (checkInputFile(input_file, inputFile))
 	{
 		input_file.close();

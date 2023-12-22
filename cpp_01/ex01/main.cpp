@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ediaz--c <ediaz--c@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ediaz--c <ediaz--c@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:49:03 by erick             #+#    #+#             */
-/*   Updated: 2023/12/19 17:16:41 by ediaz--c         ###   ########.fr       */
+/*   Updated: 2023/12/22 17:34:53 by ediaz--c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	main(void)
 	{
 		std::cout << BIBlue"Write number of zombies: " Color_off;
 		std::getline(std::cin, horde_str);
+		if (std::cin.eof())
+			exit(EXIT_FAILURE);
 		horde_nb = atoi(horde_str.c_str());
 		if (horde_nb > 0)
 			break ;
@@ -36,6 +38,8 @@ int	main(void)
 	{
 		std::cout << BIBlue"Write name of zombies: " Color_off;
 		std::getline(std::cin, name);
+		if (std::cin.eof())
+			exit(EXIT_FAILURE);
 		if (name.empty())
 			std::cout << BIRed"Name empty" Color_off << std::endl;
 		else
