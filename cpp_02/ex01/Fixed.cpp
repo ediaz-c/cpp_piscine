@@ -39,7 +39,7 @@ Fixed::~Fixed(void)
 // Operador de asignación
 Fixed &Fixed::operator=(Fixed const &equal)
 {
-	std::cout << "Assignation operator called" << std::endl;
+	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &equal)
 	{
 		this->_valueFixed = equal.getRawBits();
@@ -82,5 +82,5 @@ void	Fixed::setRawBits(int const raw)
 //	set float to Fixed
 void	Fixed::setRawBits(float const raw)
 {
-	this->_valueFixed = round(raw * (1 << Fixed::_bitsFract));
+	this->_valueFixed = std::round(raw * (1 << Fixed::_bitsFract));
 }

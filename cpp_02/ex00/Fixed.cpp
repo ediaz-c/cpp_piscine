@@ -24,7 +24,7 @@ Fixed::Fixed(Fixed const &cpy)
 
 Fixed &Fixed::operator=(Fixed const &equal)
 {
-	std::cout << "Assignation operator called" << std::endl;
+	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &equal)
 	{
 		this->_valueFixed = equal.getRawBits();
