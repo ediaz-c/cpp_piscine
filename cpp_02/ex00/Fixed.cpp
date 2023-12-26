@@ -38,7 +38,7 @@ int Fixed::getRawBits(void) const
 	return (this->_valueFixed >> Fixed::_bitsFract);
 }
 
-void	Fixed::setRawBits(int const value)
+void	Fixed::setRawBits(int const raw)
 {
-	this->_valueFixed = value << Fixed::_bitsFract;
+	this->_valueFixed = raw << Fixed::_bitsFract;
 }

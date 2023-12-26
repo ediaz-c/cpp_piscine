@@ -17,17 +17,17 @@ Fixed::Fixed(Fixed const &cpy)
 }
 
 // Constructor con parámetro int
-Fixed::Fixed(int const value)
+Fixed::Fixed(int const raw)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->setRawBits(value);
+	this->setRawBits(raw);
 }
 
 // Constructor con parámetro float
-Fixed::Fixed(float const value)
+Fixed::Fixed(float const raw)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->setRawBits(value);
+	this->setRawBits(raw);
 }
 
 // Destructor
@@ -75,12 +75,12 @@ int Fixed::getRawBits(void) const
 
 // Setters
 //	set int to Fixed
-void	Fixed::setRawBits(int const value)
+void	Fixed::setRawBits(int const raw)
 {
-	this->_valueFixed = value << Fixed::_bitsFract;
+	this->_valueFixed = raw << Fixed::_bitsFract;
 }
 //	set float to Fixed
-void	Fixed::setRawBits(float const value)
+void	Fixed::setRawBits(float const raw)
 {
-	this->_valueFixed = round(value * (1 << Fixed::_bitsFract));
+	this->_valueFixed = round(raw * (1 << Fixed::_bitsFract));
 }
