@@ -82,5 +82,5 @@ void	Fixed::setRawBits(int const raw)
 //	set float to Fixed
 void	Fixed::setRawBits(float const raw)
 {
-	this->_valueFixed = std::round(raw * (1 << Fixed::_bitsFract));
+	this->_valueFixed = std::roundf(raw * (1 << Fixed::_bitsFract));
 }
