@@ -7,17 +7,17 @@ FragTrap::FragTrap(void) : ClapTrap()
 	this->setHitPoints(100);
 	this->setEnergyPoints(100);
 	this->setAttackDamage(30);
-	std::cout << BIGreen << "FragTrap " << this->getName() << " is born! (Default constructor)" << Color_off << std::endl;
+	std::cout << BIGreen << "FragTrap default constructor" << Color_off << std::endl;
 }
 
 FragTrap::~FragTrap(void)
 {
-	std::cout << BIYellow << "FragTrap " << this->getName() << " is dead! (destructor)" << Color_off << std::endl;
+	std::cout << BIYellow << "FragTrap destructor" << Color_off << std::endl;
 }
 
 FragTrap::FragTrap(const std::string& name) : ClapTrap(name)
 {
-	std::cout << BIGreen << "FragTrap " << this->getName() << " is born! (constructor)" << Color_off << std::endl;
+	std::cout << BIGreen << "FragTrap constructor" << Color_off << std::endl;
 	this->setHitPoints(100);
 	this->setEnergyPoints(100);
 	this->setAttackDamage(30);
@@ -25,7 +25,7 @@ FragTrap::FragTrap(const std::string& name) : ClapTrap(name)
 
 FragTrap::FragTrap(const FragTrap& copy) : ClapTrap(copy)
 {
-	std::cout << BIGreen << "FragTrap " << this->getName() << " is born! (Copy constructor)" << Color_off << std::endl;
+	std::cout << BIGreen << "FragTrap copy constructor" << Color_off << std::endl;
 }
 
 FragTrap&	FragTrap::operator=(const FragTrap& rhs)

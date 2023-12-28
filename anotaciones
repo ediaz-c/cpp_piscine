@@ -1,0 +1,1 @@
+De ahora en adelante, cada clase que escribas tiene que estar en la forma canónico- ortodoxa: al menos un constructor por defecto, un constructor de copia, la so- brecarga de un operador de asignación y un destructor. No lo vamos a volver a pedir.
