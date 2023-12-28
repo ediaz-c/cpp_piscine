@@ -100,6 +100,26 @@ int	ClapTrap::getAttackDamage(void) const
 	return (this->_attackDamage);
 }
 
+void	ClapTrap::setName(const std::string& name)
+{
+	this->_name = name;
+}
+
+void	ClapTrap::setHitPoints(int hitPoints)
+{
+	this->_hitPoints = hitPoints;
+}
+
+void	ClapTrap::setEnergyPoints(int energyPoints)
+{
+	this->_energyPoints = energyPoints;
+}
+
+void	ClapTrap::setAttackDamage(int attackDamage)
+{
+	this->_attackDamage = attackDamage;
+}
+
 std::ostream&	operator<<(std::ostream& os, const ClapTrap& clapTrap)
 {
 	os << "Name: " << clapTrap.getName() << " HP: " << clapTrap.getHitPoints() << " EP: " << clapTrap.getEnergyPoints() << " AD: " << clapTrap.getAttackDamage() << std::endl;
