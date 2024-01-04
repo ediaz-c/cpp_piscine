@@ -16,6 +16,7 @@ class ScavTrap: virtual public ClapTrap
 		ScavTrap&	operator=(const ScavTrap& rhs);
 		void		guardGate(void);
 		bool		getGateKeeperMode(void) const;
+		void		beRepaired(unsigned int amount);
 };
 
 std::ostream&	operator<<(std::ostream& os, const ScavTrap& scavtrap);

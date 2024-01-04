@@ -3,7 +3,7 @@
 ClapTrap::ClapTrap(void)
 	: _name("anonymous"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << BIGreen << "ClapTrap default constructor" << Color_off << std::endl;
+	std::cout << BIGreen << "ClapTrap constructor" << Color_off << std::endl;
 }
 
 ClapTrap::~ClapTrap(void)
@@ -19,7 +19,7 @@ ClapTrap::ClapTrap(const std::string& name)
 
 ClapTrap::ClapTrap(const ClapTrap& copy): _name(copy._name), _hitPoints(copy._hitPoints), _energyPoints(copy._energyPoints), _attackDamage(copy._attackDamage)
 {
-	std::cout << BIGreen << "ClapTrap copy constructor" << Color_off << std::endl;
+	std::cout << BIGreen << "ClapTrap constructor" << Color_off << std::endl;
 }
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap& rhs)
@@ -67,17 +67,18 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		{
 			if (this->_hitPoints < 10)
 			{
-				std::cout << BIWhite << this->_name << " is repaired by " << amount << " points!" << Color_off << std::endl;
+				std::cout << BIWhite << this->getName() << " is repaired by " << amount << " points!" << Color_off << std::endl;
 				this->_hitPoints += amount;
+				this->_energyPoints--;
 			}
 			else
-				std::cout << BIWhite << this->_name << " is already at full health!" << Color_off << std::endl;
+				std::cout << BIWhite << this->getName() << " is already at full health!" << Color_off << std::endl;
 		}
 		else
-			std::cout << BIWhite << this->_name << " has no energy points!" << Color_off << std::endl;
+			std::cout << BIWhite << this->getName() << " has no energy points!" << Color_off << std::endl;
 	}
 	else
-		std::cout << BIWhite << this->_name << " is already dead!" << Color_off << std::endl;
+		std::cout << BIWhite << this->getName() << " is already dead!" << Color_off << std::endl;
 }
 
 std::string	ClapTrap::getName(void) const

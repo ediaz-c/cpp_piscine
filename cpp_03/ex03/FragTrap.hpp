@@ -12,6 +12,7 @@ class FragTrap: virtual public ClapTrap
 		FragTrap(const FragTrap& copy);
 		FragTrap&	operator=(const FragTrap& rhs);
 		void		highFivesGuys(void);
+		void		beRepaired(unsigned int amount);
 };
 
 std::ostream &operator<<(std::ostream &os, const FragTrap &fragtrap);

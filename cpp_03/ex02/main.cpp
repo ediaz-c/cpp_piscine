@@ -20,4 +20,7 @@ int	main(void)
 	fragtrap.beRepaired(5);
 	fragtrap.highFivesGuys();
 	printFragTrap(fragtrap);
+	fragtrap.takeDamage(100);
+	printFragTrap(fragtrap);
+	fragtrap.highFivesGuys();
 }

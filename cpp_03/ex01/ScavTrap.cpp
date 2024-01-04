@@ -45,13 +45,42 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& rhs)
 	return (*this);
 }
 
+void	ScavTrap::beRepaired(unsigned int amount)
+{
+	if (this->getHitPoints() > 0)
+	{
+		if (this->getEnergyPoints() > 0)
+		{
+			if (this->getHitPoints() < 100)
+			{
+				std::cout << BIWhite << this->getName() << " is repaired by " << amount << " points!" << Color_off << std::endl;
+				this->setHitPoints(this->getHitPoints() + amount);
+				this->setEnergyPoints(this->getEnergyPoints() - 1);
+				if (this->getHitPoints() > 100)
+					this->setHitPoints(100);
+			}
+			else
+				std::cout << BIWhite << this->getName() << " is already at full health!" << Color_off << std::endl;
+		}
+		else
+			std::cout << BIWhite << this->getName() << " has no energy points!" << Color_off << std::endl;
+	}
+	else
+		std::cout << BIWhite << this->getName() << " is already dead!" << Color_off << std::endl;
+}
+
 void	ScavTrap::guardGate(void)
 {
-	this->_gateKeeperMode = !this->_gateKeeperMode;
-	if (this->_gateKeeperMode)
-		std::cout << BIWhite << "ScavTrap " << this->getName() << " has entered in Gate keeper mode." << Color_off << std::endl;
+	if (getHitPoints() <= 0)
+		std::cout << BIWhite << this->getName() << " is dead! He can't enter in Gate keeper mode." << Color_off << std::endl;
 	else
-		std::cout << BIWhite << "ScavTrap " << this->getName() << " has left Gate keeper mode." << Color_off << std::endl;
+	{
+		this->_gateKeeperMode = !this->_gateKeeperMode;
+		if (this->_gateKeeperMode)
+			std::cout << BIWhite << "ScavTrap " << this->getName() << " has entered in Gate keeper mode." << Color_off << std::endl;
+		else
+			std::cout << BIWhite << "ScavTrap " << this->getName() << " has left Gate keeper mode." << Color_off << std::endl;
+	}
 }
 
 bool	ScavTrap::getGateKeeperMode(void) const

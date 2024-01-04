@@ -12,7 +12,9 @@ int	main(void)
 	DiamondTrap	diamondtrap("Piter");
 	printDiamondTrap(diamondtrap);
 	diamondtrap.attack("Vasya");
+	printDiamondTrap(diamondtrap);
 	diamondtrap.takeDamage(10);
+	printDiamondTrap(diamondtrap);
 	diamondtrap.beRepaired(10);
 	printDiamondTrap(diamondtrap);
 	diamondtrap.whoAmI();

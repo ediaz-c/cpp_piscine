@@ -18,6 +18,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		void			attack(const std::string& target);
 		void			whoAmI(void);
 		std::string		getName(void) const;
+		void			beRepaired(unsigned int amount);
 };
 
 std::ostream &operator<<(std::ostream &os, const DiamondTrap &diamondtrap);

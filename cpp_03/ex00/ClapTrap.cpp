@@ -69,6 +69,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 			{
 				std::cout << BIWhite << this->_name << " is repaired by " << amount << " points!" << Color_off << std::endl;
 				this->_hitPoints += amount;
+				this->_energyPoints--;
 			}
 			else
 				std::cout << BIWhite << this->_name << " is already at full health!" << Color_off << std::endl;

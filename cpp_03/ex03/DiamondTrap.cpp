@@ -1,7 +1,7 @@
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap(void)
-	: ScavTrap(), FragTrap()
+	: ClapTrap(), ScavTrap(), FragTrap()
 {
 	std::cout << BIGreen << "DiamondTrap default constructor" << Color_off << std::endl;
 }
@@ -12,9 +12,10 @@ DiamondTrap::~DiamondTrap(void)
 }
 
 DiamondTrap::DiamondTrap(const std::string& name)
-	: ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), _name(name)
+	: ClapTrap(), ScavTrap(name), FragTrap(name), _name(name)
 {
 	std::cout << BIGreen << "DiamondTrap constructor" << Color_off << std::endl;
+	this->ClapTrap::setName(name + "_clap_name");
 	this->setHitPoints(100);
 	this->setEnergyPoints(50);
 	this->setAttackDamage(30);
@@ -37,6 +38,30 @@ DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& rhs)
 		this->setAttackDamage(rhs.getAttackDamage());
 	}
 	return (*this);
+}
+
+void	DiamondTrap::beRepaired(unsigned int amount)
+{
+	if (this->getHitPoints() > 0)
+	{
+		if (this->getEnergyPoints() > 0)
+		{
+			if (this->getHitPoints() < 100)
+			{
+				std::cout << BIWhite << this->getName() << " is repaired by " << amount << " points!" << Color_off << std::endl;
+				this->setHitPoints(this->getHitPoints() + amount);
+				this->setEnergyPoints(this->getEnergyPoints() - 1);
+				if (this->getHitPoints() > 100)
+					this->setHitPoints(100);
+			}
+			else
+				std::cout << BIWhite << this->getName() << " is already at full health!" << Color_off << std::endl;
+		}
+		else
+			std::cout << BIWhite << this->getName() << " has no energy points!" << Color_off << std::endl;
+	}
+	else
+		std::cout << BIWhite << this->getName() << " is already dead!" << Color_off << std::endl;
 }
 
 void	DiamondTrap::attack(const std::string& target)

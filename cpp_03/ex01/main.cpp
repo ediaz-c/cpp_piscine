@@ -42,4 +42,13 @@ int	main(void)
 	std::cout << std::endl;
 	bob.takeDamage(100);
 	printScavTrap(bob);
+
+	bob.beRepaired(100);
+	printScavTrap(bob);
+
+	bob.takeDamage(100);
+	printScavTrap(bob);
+
+	bob.guardGate();
+	printScavTrap(bob);
 }
