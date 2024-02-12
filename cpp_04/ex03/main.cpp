@@ -3,6 +3,11 @@
 #include "MateriaSource.hpp"
 #include "Character.hpp"
 
+void	showLeaks(void)
+{
+	
+}
+
 int main()
 {
 	IMateriaSource* src = new MateriaSource();
