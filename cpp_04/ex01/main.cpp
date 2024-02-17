@@ -121,7 +121,6 @@ std::string	getInput(std::string prompt)
 
 int	main(void)
 {
-	atexit(showLeaks);
 	std::string test;
 	std::cout << BIWhite << "Select test: " << Color_off << std::endl;
 	std::cout << BIBlue << "[1] main test\n[2] array test\n[3] my test" << Color_off << std::endl;
