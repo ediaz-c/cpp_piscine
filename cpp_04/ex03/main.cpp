@@ -5,7 +5,7 @@
 
 void	showLeaks(void)
 {
-	
+	system("leaks -q interfaces");
 }
 
 int main()

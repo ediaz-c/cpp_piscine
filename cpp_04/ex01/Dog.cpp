@@ -8,8 +8,8 @@ Dog::Dog(void): Animal(), _brain(new Brain())
 
 Dog::~Dog()
 {
-	delete this->_brain;
 	std::cout << BIBlue << "Dog destructor called." << Color_off << std::endl;
+	delete this->_brain;
 }
 
 Dog::Dog(const Dog& copy): Animal(copy), _brain(new Brain(*copy._brain))
