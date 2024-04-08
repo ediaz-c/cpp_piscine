@@ -1,0 +1,38 @@
+In file included from src/AForm.cpp:1:
+In file included from incl/AForm.hpp:4:
+In file included from incl/ex02.hpp:9:
+incl/PresidentialPardonForm.hpp:8:38: error: base class has incomplete type
+class PresidentialPardonForm: public AForm
+                              ~~~~~~~^~~~~
+incl/Bureaucrat.hpp:6:7: note: forward declaration of 'AForm'
+class AForm;
+      ^
+In file included from src/AForm.cpp:1:
+In file included from incl/AForm.hpp:4:
+In file included from incl/ex02.hpp:10:
+incl/RobotomyRequestForm.hpp:8:35: error: base class has incomplete type
+class RobotomyRequestForm: public AForm
+                           ~~~~~~~^~~~~
+incl/Bureaucrat.hpp:6:7: note: forward declaration of 'AForm'
+class AForm;
+      ^
+src/ShrubberyCreationForm.cpp:37:16: error: implicit instantiation of undefined template 'std::basic_ofstream<char>'
+        std::ofstream file;
+                      ^
+In file included from /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iosfwd:141:32: note: template is declared here
+    class _LIBCPP_TEMPLATE_VIS basic_ofstream;
+                               ^
+src/AForm.cpp:1:
+In file included from incl/AForm.hpp:4:
+In file included from incl/ex02.hpp:11:
+incl/ShrubberyCreationForm.hpp:22:37: error: base class has incomplete type
+class ShrubberyCreationForm: public AForm
+                             ~~~~~~~^~~~~
+incl/Bureaucrat.hpp:6:7: note: forward declaration of 'AForm'
+class AForm;
+      ^
+1 error generated.
+3 errors generated.
+make: *** [obj/ShrubberyCreationForm.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [obj/AForm.o] Error 1
