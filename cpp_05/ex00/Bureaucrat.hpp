@@ -2,41 +2,55 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
-#include <ostream>
+# define Color_off "\033[0m"       //Color off
+# define BIBlack "\033[1;90m"      //Black
+# define BIRed "\033[1;91m"        //Red
+# define BIGreen "\033[1;92m"      //Green
+# define BIYellow "\033[1;93m"     //Yellow
+# define BIBlue "\033[1;94m"       //Blue
+# define BIPurple "\033[1;95m"     //Purple
+# define BICyan "\033[1;96m"       //Cyan
+# define BIWhite "\033[1;97m"      //White
+
+#ifdef DEBUG
+#define TRACE_MSG_DBG(msg) std::cout << BIBlue << msg << Color_off << std::endl;
+#else
+#define TRACE_MSG_DBG(msg)
+#endif
 
 class Bureaucrat
 {
-	private:
-		const std::string	_name;
-		int					_grade;
-	public:
-	// Orhtodox Canonical Form
-	Bureaucrat(void);
-	~Bureaucrat();
-	Bureaucrat(const Bureaucrat &cpy);
+    protected:
+        const std::string _name;
+        int _grade;
+    public:
+        Bureaucrat(void);
+        ~Bureaucrat(void);
+        Bureaucrat(const Bureaucrat& copy);
+        Bureaucrat& operator=(const Bureaucrat& rhs);
 
-	Bureaucrat(const std::string name, int grade);
+        Bureaucrat(const std::string& name, int grade);
 
-	Bureaucrat& operator=(const Bureaucrat & rhs);
+        const std::string& getName() const;
+        int getGrade() const;
+        int setGrade();
 
-	class GradeTooHighException : public std::exception
-	{
-		virtual const char* what() const throw();
-	};
-	class GradeTooLowException : public std::exception
-	{
-		virtual const char* what() const throw();
-	};
+        void incrementGrade();
+        void decrementGrade();
 
-	void	incrementGrade(void);
-	void	decrementGrade(void);
-	
-	//Utils
-	std::string const &getName(void) const;
-	// void		setName(const std::string& name);
-	int			getGrade(void) const;
-	void		setGrade(const int grade);
+        class GradeTooHighException : std::exception
+        {
+            public:
+                const char* what() const throw();
+        };
+
+        class GradeTooLowException : std::exception
+        {
+            public:
+                const char* what() const throw();
+        };
 };
-std::ostream &operator<<(std::ostream &out, Bureaucrat const &bureaucrat);
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);
 
 #endif

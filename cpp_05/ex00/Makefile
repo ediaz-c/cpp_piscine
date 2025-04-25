@@ -1,27 +1,22 @@
-NAME		=	bureaucrat
-CXX			=	clang++
-CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
+NAME = bureaucrat
 
-SRCS		=	main.cpp Bureaucrat.cpp
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-OBJS		=	$(SRCS:.cpp=.o)
+SRCS = main.cpp Bureaucrat.cpp
+OBJS = $(SRCS:.cpp=.o)
 
-all:		$(NAME)
+all: $(NAME)
 
-$(NAME):	$(OBJS)
-	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
-	@echo "Compiling $@"
-
-%.o:		%.cpp
-	@$(CXX) $(CXXFLAGS) -c $< -o $@
-	@echo "Compiling $<"
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 clean:
 	rm -f $(OBJS)
 
-fclean:		clean
+fclean: clean
 	rm -f $(NAME)
 
-re:			fclean all
+re: fclean all
 
-.PHONY:		all clean fclean re
+.PHONY: all clean fclean re

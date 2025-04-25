@@ -1,55 +1,28 @@
 #include "Bureaucrat.hpp"
 
-int	main(void)
-{
-	Bureaucrat	paco("Paco", 1);
-	std::cout << paco << std::endl;
-	std::cout << "===== Trying to increment grade =====" << std::endl;
-	try
-	{
-		paco.incrementGrade();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	std::cout << "===== Trying to decrement grade =====" << std::endl;
-	std::cout << paco << std::endl;
-	try
-	{
-		paco.decrementGrade();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	std::cout << paco << std::endl;
-	try
-	{
-		paco.decrementGrade();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	std::cout << paco << std::endl;
-	std::cout << "===== Creating a bureaucrat with a grade of 151 =====" << std::endl;
-	try
-	{
-		Bureaucrat	pedro("Pedro", 151);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	std::cout << "===== Creating a bureaucrat with a grade of 0 =====" << std::endl;
-	try
-	{
-		Bureaucrat	carlos("Carlos", 0);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	return (0);
+int main() {
+    try {
+        Bureaucrat b1("Alice", 1);
+        std::cout << b1 << std::endl;
+        b1.incrementGrade(); // Esto debería lanzar excepción
+    } catch (std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+
+    try {
+        Bureaucrat b2("Bob", 151); // Esto también lanza excepción
+    } catch (std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+
+    try {
+        Bureaucrat b3("Charlie", 149);
+        b3.decrementGrade(); // Debe quedar en 150
+        std::cout << b3 << std::endl;
+        b3.decrementGrade(); // Ahora lanza excepción
+    } catch (std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+
+    return 0;
 }
